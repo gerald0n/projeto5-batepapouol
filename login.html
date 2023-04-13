@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/styles/resett.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+        ></script>
+        <title>Login UOL - Bate papo</title>
+
+        <style>
+            body {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding-top: 10rem;
+            }
+
+            img {
+                width: 130px;
+                height: 92px;
+                margin-bottom: 9.5rem;
+            }
+
+            #login {
+                width: 261px;
+                height: 54px;
+
+                text-align: center;
+
+                background: #ffffff;
+                border: 1px solid #d7d7d7;
+                border-radius: 4px;
+                margin-bottom: 1.5rem;
+            }
+            #login::placeholder,
+            #btnLogin,
+            #login {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 25px;
+                text-align: center;
+            }
+
+            #login::placeholder {
+                color: #aeaeae;
+            }
+
+            #btnLogin {
+                width: 109px;
+                height: 45px;
+                border: none;
+                background: #e7e7e7;
+                border-radius: 9px;
+                background-color: rgb(0, 0, 0);
+                color: white;
+            }
+
+            #btnLogin:disabled {
+                background-color: #aba6a6;
+                color: white;
+            }
+
+            #login:focus {
+                outline-color: rgb(0, 0, 0);
+            }
+
+            #login:focus.error {
+                outline-color: rgb(255, 0, 0);
+            }
+
+        </style>
+    </head>
+    <body>
+        <img src="./assets/images/logo 2.png" alt="" />
+        <input type="text" id="login" placeholder="Digite seu nome" autocomplete="off"/>
+        <button id="btnLogin" disabled>Entrar</button>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./assets/scripts/main.js"></script>
+    </body>
+</html>
