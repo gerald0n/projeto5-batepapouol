@@ -1,6 +1,7 @@
 body {
     background: #f3f3f3;
-}
+    font-family: 'Roboto';
+  }
 
 ion-icon {
     width: 3.5rem;

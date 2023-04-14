@@ -2,32 +2,8 @@ axios.defaults.headers.common['Authorization'] = 'uJX299kMVSRkCCZKpm2zjOlQ'
 const URL_MESSAGES = 'https://mock-api.driven.com.br/api/vm/uol/messages'
 const URL_LOGIN = 'https://mock-api.driven.com.br/api/vm/uol/participants'
 const URL_STATUS = 'https://mock-api.driven.com.br/api/vm/uol/status'
-const btnLogin = document.querySelector('#btnLogin')
-const inputLogin = document.querySelector('#login')
 
-inputLogin.addEventListener('focus', () => {
-    onkeyup = event => {
-        if (inputLogin.value.length > 0) btnLogin.disabled = false
-        else btnLogin.disabled = true
-
-        if(event.key === 'Enter')
-            console.log(inputLogin.value)
-    }
-    // axios.post(URL_LOGIN, {name: inputLogin.value})
-    // window.location.href = './index.html'
-})
-
-// ENTRAR NA SALA
-const loginRoom = user => {
-    axios
-        .post(URL_LOGIN, { name: user.from })
-        .then(() => {
-            console.log('AUTENTICAÇÃO EFETUADA COM SUCESSO')
-        })
-        .catch(() => {
-            console.log('NOME JÁ EXISTENTE!!!')
-        })
-}
+let arrayMensagens = []
 
 // BUSCAR MENSAGENS
 const getMessages = url => {
@@ -41,14 +17,8 @@ const getMessages = url => {
         })
 }
 
-// loginRoom(username)
+getMessages(URL_MESSAGES)
 
-// setInterval(getMessages, 500, URL_MESSAGES)
-
-// setInterval(() => {
-//     authentication(URL_STATUS, username)
-//     getParticipants()
-// }, 5000)
 
 // ENVIAR MENSAGEM AO SERVIDOR
 const setMessage = () => {}

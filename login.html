@@ -22,79 +22,35 @@
         ></script>
         <title>Login UOL - Bate papo</title>
 
-        <style>
-            body {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding-top: 10rem;
-            }
-
-            img {
-                width: 130px;
-                height: 92px;
-                margin-bottom: 9.5rem;
-            }
-
-            #login {
-                width: 261px;
-                height: 54px;
-
-                text-align: center;
-
-                background: #ffffff;
-                border: 1px solid #d7d7d7;
-                border-radius: 4px;
-                margin-bottom: 1.5rem;
-            }
-            #login::placeholder,
-            #btnLogin,
-            #login {
-                font-family: 'Roboto';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 18px;
-                line-height: 25px;
-                text-align: center;
-            }
-
-            #login::placeholder {
-                color: #aeaeae;
-            }
-
-            #btnLogin {
-                width: 109px;
-                height: 45px;
-                border: none;
-                background: #e7e7e7;
-                border-radius: 9px;
-                background-color: rgb(0, 0, 0);
-                color: white;
-            }
-
-            #btnLogin:disabled {
-                background-color: #aba6a6;
-                color: white;
-            }
-
-            #login:focus {
-                outline-color: rgb(0, 0, 0);
-            }
-
-            #login:focus.error {
-                outline-color: rgb(255, 0, 0);
-            }
-
-        </style>
     </head>
     <body>
-        <img src="./assets/images/logo 2.png" alt="" />
-        <input type="text" id="login" placeholder="Digite seu nome" autocomplete="off"/>
-        <button id="btnLogin" disabled>Entrar</button>
+        <div class="loading disabled">
+            <img
+                src="./assets/images/loading3.gif"
+                alt=""
+            />
+        </div>
 
+        <main>
+            <img src="./assets/images/logo 2.png" alt="" />
+            <div class="container-login">
+                <div class="error-login disabled">
+                    <ion-icon name="close-circle"></ion-icon>
+                    <p>username já existente. Tente novamente!</p>
+                </div>
+                <input
+                    data-test="input-name"
+                    type="text"
+                    id="login"
+                    placeholder="Digite seu nome"
+                    autocomplete="off"
+                />
+                <button data-test="send-name" id="btnLogin" disabled>
+                    Entrar
+                </button>
+            </div>
+        </main>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="./assets/scripts/main.js"></script>
+        <script src="./assets/scripts/login.js"></script>
     </body>
 </html>
