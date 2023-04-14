@@ -3,14 +3,16 @@ const URL_MESSAGES = 'https://mock-api.driven.com.br/api/vm/uol/messages'
 const URL_LOGIN = 'https://mock-api.driven.com.br/api/vm/uol/participants'
 const URL_STATUS = 'https://mock-api.driven.com.br/api/vm/uol/status'
 
-let arrayMensagens = []
+let arrMessages = []
 
 // BUSCAR MENSAGENS
 const getMessages = url => {
     axios
         .get(url)
         .then(response => {
-            console.log(response)
+            response.data.forEach(message => {
+                arrMessages.push(message)
+            })
         })
         .catch(error => {
             console.log(error)
