@@ -20,15 +20,12 @@
             nomodule
             src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
         ></script>
+        <link rel="stylesheet" href="./assets/styles/login.css" />
         <title>Login UOL - Bate papo</title>
-
     </head>
     <body>
         <div class="loading disabled">
-            <img
-                src="./assets/images/loading3.gif"
-                alt=""
-            />
+            <img src="./assets/images/loading3.gif" alt="" />
         </div>
 
         <main>
@@ -39,18 +36,22 @@
                     <p>username já existente. Tente novamente!</p>
                 </div>
                 <input
-                    data-test = "input-name"
+                    data-test="input-name"
                     type="text"
                     id="login"
                     placeholder="Digite seu nome"
                     autocomplete="off"
                 />
-                <button data-test = "send-name" id="btnLogin" disabled>
+                <button
+                    data-test="send-name"
+                    id="btnLogin"
+                    disabled
+                >
                     Entrar
                 </button>
             </div>
         </main>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="./assets/scripts/login.js"></script>
+        <script type="module" src="./assets/scripts/login.js"></script>
     </body>
 </html>

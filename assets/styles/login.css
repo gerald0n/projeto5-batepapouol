@@ -2,7 +2,7 @@ body {
     width: 100vw;
     display: flex;
     align-items: center;
-    background: #f3f3f3;
+    background: #ffffff;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -90,8 +90,6 @@ main {
 }
 
 .loading {
-    width: 5rem;
-    height: 5rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -101,6 +99,11 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.loading img {
+    width: 5rem;
+    height: 5rem;
 }
 
 .loading.disabled {
