@@ -1,6 +1,7 @@
 body {
     background: #f3f3f3;
     font-family: 'Roboto';
+    font-weight: 400;
 }
 
 ion-icon {
@@ -20,6 +21,10 @@ header,
     align-items: center;
 
     padding-inline: 2.2rem;
+}
+
+.send-message span {
+    font-style: italic;
 }
 
 header {
@@ -85,6 +90,11 @@ input:focus {
     outline: 0;
 }
 
+button {
+    background: none;
+    border: none;
+}
+
 .container-messages li {
     background: white;
 }
@@ -94,5 +104,61 @@ input:focus {
 }
 
 .container-messages .bg-pink {
-    background: #aaaaaa;
+    background: #FFDEDE;
+}
+
+.navigation {
+    font-size: 1.6rem;
+    padding-inline: 2rem;
+}
+
+.loggedUsers li,
+.visibility li {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.loggedUsers li span,
+.visibility li span {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+
+.loggedUsers ion-icon:nth-child(2),
+.visibility ion-icon:nth-child(2) {
+    width: 1.9rem;
+    height: 1.7rem;
+    color: #28bb25;
+    visibility: hidden;
+}
+
+.loggedUsers .check.checked, .visibility .check.checked {
+    visibility: visible;
+}
+
+.loggedUsers ul,
+.visibility ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.sidebar p {
+    font-weight: 700;
+    line-height: 1.9rem;
+    margin-block: 3rem;
+    text-align: center;
+}
+
+.loggedUsers ion-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.visibility ion-icon {
+    width: 2.2rem;
+    height: 2.2rem;
 }
