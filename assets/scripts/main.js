@@ -8,6 +8,17 @@ const btnSend = document.querySelector('#btnSendMessage')
 const inputMessage = document.querySelector('#inputMessage')
 // from | to | text | type | time
 let arrMessages = []
+const user = {
+    from: localStorage.getItem('user'),
+    to: 'Todos',
+    text: '',
+    type: 'message'
+}
+
+if (btnSend) btnSend.addEventListener('click', setMessage)
+getMessages(URL_MESSAGES)
+setInterval(getMessages, 3000, URL_MESSAGES)
+setInterval(authentication, 3000, URL_STATUS, user)
 
 function showMessages() {
     containerMain.innerHTML = ''
@@ -21,16 +32,10 @@ function showMessages() {
     })
 }
 
-btnSend.addEventListener('click', sendMessages)
-
-function sendMessages() {
-
-}
-
 // BUSCAR MENSAGENS
-const getMessages = url => {
+function getMessages(){
     axios
-        .get(url)
+        .get(URL_MESSAGES)
         .then(response => {
             arrMessages = response.data
             showMessages()
@@ -38,14 +43,19 @@ const getMessages = url => {
         .catch(error => console.log(error.status))
 }
 
-getMessages(URL_MESSAGES)
-setInterval(getMessages, 3000, URL_MESSAGES)
-
 // ENVIAR MENSAGEM AO SERVIDOR
-const setMessage = () => {}
+function setMessage () {
+    user.text = inputMessage.value
+    axios
+        .post(URL_MESSAGES, user)
+        .then(response => console.log(response))
+        .catch(error => {
+            console.log('MENSAGEM VAZIA.')
+        })
+}
 
 // BUSCAR PARTICIPANTES
-const getParticipants = () => {
+function getParticipants () {
     axios.get(URL_LOGIN).then(response => {
         console.log(response.data)
     })
@@ -55,6 +65,13 @@ const getParticipants = () => {
 function authentication(url, user) {
     axios
         .post(url, { name: user.from })
-        .then(response => console.log(response))
-        .catch(error => error)
+        .then(response => console.log(response.data))
+        .catch(error => {
+            window.location.replace('./login.html')
+            alert(
+                `Erro ${error.response.data}: usuário desconectado por inatividade!`
+            )
+        })
 }
+
+

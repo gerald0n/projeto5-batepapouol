@@ -33,13 +33,13 @@ main {
     margin-block: 9rem;
 }
 
-ul {
+main ul {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
 }
 
-ul li {
+main ul li {
     width: 100%;
     min-height: 5rem;
     background: white;
