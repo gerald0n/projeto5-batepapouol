@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./assets/styles/resett.css" />
-        <link rel="stylesheet" href="./assets/styles/main.css" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -20,98 +20,38 @@
             nomodule
             src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
         ></script>
-        <title>UOL - Bate papo</title>
-
-        <style>
-            .sidebar {
-                width: 100%;
-                height: 100%;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 10;
-            }
-
-            .sidebar.disabled {
-                display: none;
-            }
-
-            .return {
-                width: 30%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.6);
-                position: fixed;
-                top: 0;
-                left: 0;
-            }
-
-            .navigation {
-                width: 70%;
-                height: 100%;
-                background: white;
-                position: fixed;
-                top: 0;
-                right: 0;
-            }
-        </style>
+        <link rel="stylesheet" href="./assets/styles/login.css" />
+        <title>Login UOL - Bate papo</title>
     </head>
     <body>
-        <div class="sidebar disabled">
-            <div data-test="overlay" class="return"></div>
-            <div class="navigation">
-                <div class="loggedUsers">
-                    <p>Escolha um contato <br />para enviar mensagem:</p>
-                    <ul>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="visibility">
-                    <p>Escolha a visibilidade:</p>
-                    <ul>
-                        <li data-test="public" class="type-message">
-                            <span
-                                ><ion-icon name="lock-open"></ion-icon
-                                >Público</span
-                            ><ion-icon
-                                class="check checked"
-                                name="checkmark-sharp"
-                            ></ion-icon>
-                        </li>
-                        <li data-test="private" class="type-message">
-                            <span
-                                ><ion-icon name="lock-closed"></ion-icon
-                                >Reservadamente</span
-                            ><ion-icon
-                                class="check"
-                                name="checkmark-sharp"
-                            ></ion-icon>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div class="loading disabled">
+            <img src="./assets/images/loading3.gif" alt="" />
         </div>
 
-        <header>
-            <img id="logo" src="./assets/images/logo 1.png" alt="" />
-            <button data-test="open-participants" id="header-icon"><ion-icon name="people"></ion-icon></button>
-        </header>
         <main>
-            <ul class="container-messages"></ul>
-            <span id="scrollar"></span>
-        </main>
-        <div class="send-message">
-            <div>
-                <input data-test="input-message"
-                    id="inputMessage"
+            <img src="./assets/images/logo 2.png" alt="" />
+            <div class="container-login">
+                <div class="error-login disabled">
+                    <ion-icon name="close-circle"></ion-icon>
+                    <p>username já existente. Tente novamente!</p>
+                </div>
+                <input
+                    data-test="input-name"
                     type="text"
-                    placeholder="Escreva aqui..."
+                    id="login"
+                    placeholder="Digite seu nome"
+                    autocomplete="off"
                 />
-                <span data-test="recipient" id="sendTo">Enviando para Todos (publico)</span>
+                <button
+                    data-test="send-name"
+                    id="btnLogin"
+                    disabled
+                >
+                    Entrar
+                </button>
             </div>
-            <button data-test="send-message" id="btnSendMessage"><ion-icon name="paper-plane-outline"></ion-icon></button>
-        </div>
-
+        </main>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="./assets/scripts/main.js"></script>
+        <script src="./assets/scripts/login.js"></script>
     </body>
 </html>
