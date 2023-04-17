@@ -11,8 +11,6 @@ inputLogin.addEventListener('focus', () => {
             document.querySelector('.error-login').classList.add('disabled')
             btnLogin.disabled = true
         }
-
-        if (event.key === 'Enter') loginRoom()
     }
 })
 
