@@ -1,4 +1,4 @@
-axios.defaults.headers.common['Authorization'] = 'uJX299kMVSRkCCZKpm2zjOlQ'
+axios.defaults.headers.common['Authorization'] = 'r8QBwdoMYNQpMCpzrdjOpk7b'
 const URL_LOGIN = 'https://mock-api.driven.com.br/api/vm/uol/participants'
 
 const btnLogin = document.querySelector('#btnLogin')
